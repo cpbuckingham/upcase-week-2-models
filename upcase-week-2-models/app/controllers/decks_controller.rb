@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-
+before_filter :authenticate
   def index
     @decks = Deck.all
   end
@@ -28,4 +28,7 @@ class DecksController < ApplicationController
     @deck.destroy
     redirect_to @deck
   end
+
+
+
 end
